@@ -292,7 +292,7 @@ int usbprog_init(void)
 
 	if (usbprog_jtag_handle == 0)
 	{
-		LOG_ERROR("Cannot find eStick Interface! Please check connection and permissions.");
+		LOG_ERROR("Cannot find USBProg Interface! Please check connection and permissions.");
 		return ERROR_JTAG_INIT_FAILED;
 	}
   
@@ -313,7 +313,7 @@ int usbprog_init(void)
 		check_cnt++;
 	}
 
-	LOG_INFO("eStick JTAG Interface ready");
+	LOG_INFO("USBProg JTAG Interface ready");
 
 	usbprog_reset(0, 0);
 	usbprog_tap_init();
@@ -484,7 +484,7 @@ void usbprog_simple_command(u8 command,uint8_t _data)
 	result = usbprog_usb_message(usbprog_jtag_handle, 4, 1);
 	if (result != 1)
 	{
-		LOG_ERROR("Estick command 0x%02x failed (%d)", command, result);
+		LOG_ERROR("USBProg command 0x%02x failed (%d)", command, result);
 	}
 }
 
@@ -534,7 +534,7 @@ int usbprog_handle_usbprog_info_command(struct command_context_s *cmd_ctx, char 
 }
 
 /***************************************************************************/
-/* Estick tap functions */
+/* USBProg tap functions */
 
 
 static int tap_length;
@@ -632,7 +632,7 @@ int usbprog_tap_execute(void)
 	    byte_length_out = (tap_length+7)/8;
 	    
 #ifdef _DEBUG_USB_COMMS_
-	    LOG_DEBUG("eStick is sending %d bytes", byte_length);
+	    LOG_DEBUG("USBProg is sending %d bytes", byte_length);
 #endif
 		
 	    output_counter=0;
@@ -666,10 +666,10 @@ int usbprog_tap_execute(void)
     
     result=byte_length_out;
 #ifdef _DEBUG_USB_COMMS_
-    LOG_DEBUG("eStick tap result %d",result);
+    LOG_DEBUG("USBProg tap result %d",result);
     usbprog_debug_buffer(tdo_buffer,result);
 #endif
-    //LOG_INFO("eStick tap execute %d",tap_length);
+    //LOG_INFO("USBProg tap execute %d",tap_length);
     for (i = 0; i < pending_scan_results_length; i++)
     {
       pending_scan_result_t *pending_scan_result = &pending_scan_results_buffer[i];
@@ -706,7 +706,7 @@ int usbprog_tap_execute(void)
 }
 
 /*****************************************************************************/
-/* Estick USB low-level functions */
+/* USBProg USB low-level functions */
 
 usbprog_jtag_t* usbprog_usb_open()
 {
