@@ -12,8 +12,8 @@ Currently the new pin's configuration is difference than the original. PORTB is 
 | Pin | Function | |:--------|:-------------| | 0 | TDI | | 1 | TMS | | 2 | TRST | | 3 | SRST | | 4 | TCK | | 5 | TDO |
 
 And following is the pin configuration of USBProg:
-
-![USBProg](https://github.com/cahya-wirawan/usbprog-jtag/blob/master/images/USBProg-pin.png "USBProg)
+<img src="https://github.com/cahya-wirawan/usbprog-jtag/blob/master/images/USBProg-pin.png" alt="USBProg-pin" 
+style="width: 300px;"/>
 
 ## How to compile
 Currently the revision 1454 of OpenOCD is used, and it needs to be patched with the driver for usbprog-jtag. The OpenOCD's source code can be downloaded from the usbprog-jtag's repository, it was patched already with usbprog-jtag code. Following is the step to get/compile openocd and make usbprog-jtag's firmware: wget http://usbprog-jtag.googlecode.com/files/openocd-r1454-usbprog-0.1.tgz tar xvzf openocd-r1454-usbprog-0.1.tgz cd openocd-r1454-usbprog sh ./bootstrap ./configure --enable-usbprog make
