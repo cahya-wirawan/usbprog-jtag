@@ -1,7 +1,7 @@
 # USBProg-jtag
 ## New and optimized OpenOCD-Firmware for USBProg
 
-The original OpenOCD-Firmware for USBProg is very slow. This project was created as an alternative to this firmware, it is based on http://code.google.com/p/estick-jtag/'>estick-jtag. Usbprog-jtag is about 18 times faster than the original firmware.
+The original OpenOCD-Firmware for USBProg is very slow. This project was created as an alternative to this firmware, it is based on [estick-jtag](https://github.com/cahya-wirawan/estick-jtag). Usbprog-jtag is about 18 times faster than the original firmware.
 
 ## News
 Apr 11, 2010: An early optimized version of OpenOCD 0.4.0 driver for USBProg was created: http://usbprog-jtag.googlecode.com/files/openocd-0.4.0-usbprog-0.1.diff'>openocd-0.4.0-usbprog-0.1.diff
