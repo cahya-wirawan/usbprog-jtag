@@ -88,9 +88,17 @@ verify_image test-flash.bin 0 bin verified 64984 bytes in 0.717032s
 
 ## Transfer rate comparison
 
-| | USBProg (original firmware) | usbprog-jtag | 
-|:-|:--------------------------------|:-----------------| 
+Following is the improvement achieved by usbprog-jtag:
+
+|   | USBProg (original firmware) | usbprog-jtag | 
+| :----- |:-----|:-----| 
 | FLASH | 0.6 KB/s | 10.97 KB/s | 
 | RAM | 1 KB/s | 18 KB/s |
 
-The test was made with following information: * Mac OS X 10.5.8, 2.33 GHz Intel Core 2 Duo, 2GB RAM * OpenOCD rev 1454 * ARM GNU gdb (GDB) 7.0.1 * AVR gcc version 4.3.2 (GCC) * Firmware was compiled with optimization: -Os * Target board: LM3S2110 CAN Device Evaluation Board * jtag_speed 0 * File size to flash: 64984 bytes * File size to ram: 15832 bytes
+The test was made with following information: 
+- Mac OS X 10.5.8, 2.33 GHz Intel Core 2 Duo, 2GB RAM 
+- OpenOCD rev 1454 * ARM GNU gdb (GDB) 7.0.1 
+- AVR gcc version 4.3.2 (GCC) 
+- Firmware was compiled with optimization: -Os 
+- Target board: LM3S2110 CAN Device Evaluation Board 
+- jtag_speed 0 * File size to flash: 64984 bytes * File size to ram: 15832 bytes
